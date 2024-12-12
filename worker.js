@@ -32,3 +32,20 @@ fileQueue.process(async (job, done) => {
     done(err);
   }
 });
+
+// ========================
+
+// const Bull = require('bull');
+// const dbClient = require('./db');
+
+// const userQueue = new Bull('userQueue');
+
+// userQueue.process(async (job) => {
+//   const { userId } = job.data;
+//   if (!userId) throw new Error('Missing userId');
+
+//   const user = await dbClient.db.collection('users').findOne({ _id: new dbClient.ObjectId(userId) });
+//   if (!user) throw new Error('User not found');
+
+//   console.log(`Welcome ${user.email}!`);
+// });
