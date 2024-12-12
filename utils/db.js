@@ -1,4 +1,5 @@
 // utils/db.js
+// eslint-disable-next-line import/no-unresolved
 import { MongoClient } from 'mongodb';
 
 class DBClient {
