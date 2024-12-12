@@ -1,14 +1,14 @@
+/* eslint-disable import/extensions */
 /* eslint-disable import/no-unresolved */
-import { Router } from 'express';
-// eslint-disable-next-line import/extensions
-import AppController from '../controllers/AppController.js';
-// eslint-disable-next-line import/extensions
-import UsersController from '../controllers/UsersController.js';
+const express = require('express');
+const FilesController = require('../controllers/FilesController');
 
-const router = Router();
+const router = express.Router();
 
-router.get('/status', AppController.getStatus);
-router.get('/stats', AppController.getStats);
-router.post('/users', UsersController.postNew);
+router.get('/files/:id', FilesController.getShow);
+router.get('/files', FilesController.getIndex);
 
-export default router;
+router.put('/files/:id/publish', FilesController.putPublish);
+router.put('/files/:id/unpublish', FilesController.putUnpublish);
+
+module.exports = router;
